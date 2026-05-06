@@ -1,0 +1,11 @@
+{
+    "name": "Projeto Teste de Extensão",
+    "description": "Uma extensão de teste para o curso de Extensões do Google Chrome",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": ["activeTab", "scripting"],
+    "host_permissions": ["<all_urls>"],
+    "action": {
+        "default_popup": "index.html"
+        }
+    }
