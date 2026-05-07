@@ -17,3 +17,14 @@ form.addEventListener('submit', async (event) => {
         args: [input.value]
     });
 });
+
+form.addEventListener('reset', async (event) => {
+    event.preventDefault();
+
+    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+
+    chrome.scripting.executeScript({
+        target: { tabId: tab.id },
+        function: () => window.location.reload()
+    });
+});
